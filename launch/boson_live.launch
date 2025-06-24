@@ -26,5 +26,9 @@
         <rosparam command="load" file="$(arg boson_config_file)" />
     </node>
 
+<!-- Launch RViz with window size 1600x900 at top-left -->
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find boson_camera)/rviz/view_thermal.rviz --geometry 1600x900+0+0"
+        output="screen" />
 <!-- =========================================================== -->
 </launch>
