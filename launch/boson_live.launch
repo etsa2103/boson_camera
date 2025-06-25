@@ -26,9 +26,8 @@
         <rosparam command="load" file="$(arg boson_config_file)" />
     </node>
 
-<!-- Launch RViz with window size 1600x900 at top-left -->
-  <node name="rviz" pkg="rviz" type="rviz"
-        args="-d $(find boson_camera)/rviz/view_thermal.rviz --geometry 1600x900+0+0"
-        output="screen" />
+<!-- Run the thermal display node -->
+  <node name="display_node" pkg="rr_tracking" type="display_node.py"
+        output="screen" launch-prefix="python3" />
 <!-- =========================================================== -->
 </launch>
